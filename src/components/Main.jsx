@@ -1,7 +1,6 @@
 import { useState, useEffect, useMemo } from "react"
 import { Form } from "./Form.jsx"
 import { Table } from "./Table.jsx"
-import { Header } from "./Header.jsx"
 import { helpHttp } from "../helpers/helpHttp.js"
 import { Loader } from "./Loader.jsx"
 import { Message } from "./Message.jsx"
@@ -92,35 +91,49 @@ export function Main() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-12">
-      <Header />
+    <main id="page-top" className="font-sans pb-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-        <div className="flex flex-col lg:flex-row gap-12 w-full justify-center items-center mb-16 bg-white p-8 sm:p-12 rounded-[2rem] shadow-xl shadow-slate-200/50">
-          <div className="w-full lg:w-1/2 flex justify-center items-center">
-            <Form form={form} setForm={setForm} editFormData={editFormData} editData={editData} createData={createData} emptyForm={emptyForm} />
+        <section className="w-full mt-6 sm:mt-10">
+          <div className="flex flex-col xl:flex-row gap-10 w-full justify-center items-stretch mb-10 bg-white/90 dark:bg-slate-900/60 backdrop-blur supports-backdrop-filter:bg-white/70 p-6 sm:p-8 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-black/30 ring-1 ring-slate-200/70 dark:ring-white/10">
+            <div id="contact-form" className="w-full xl:w-1/2 flex justify-center items-center">
+              <Form form={form} setForm={setForm} editFormData={editFormData} editData={editData} createData={createData} emptyForm={emptyForm} />
+            </div>
+            <div className="hidden xl:flex xl:w-1/2 justify-center items-center">
+              <img
+                src="/img/form-img-1.jpg"
+                alt="Modern Abstract Dashboard"
+                className="w-full max-w-xl h-136 object-cover rounded-3xl shadow-2xl shadow-slate-900/10 dark:shadow-black/40"
+              />
+            </div>
           </div>
-          <div className="w-130 lg:w-1/2 flex justify-center items-center">
-            <img
-              src="/img/form-img-1.jpg"
-              alt="Modern Abstract Dashboard"
-              className="w-128 h-158 object-cover rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500 ease-out"
-            />
-          </div>
-        </div>
-        <div className="w-full">
-          <div className="bg-white p-6 sm:p-10 rounded-[2rem] shadow-xl shadow-slate-200/50 w-full overflow-x-auto">
-            <div className="flex items-center justify-between mb-8 px-2">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-800 tracking-tight">Contacts Directory</h2>
-              <span className="bg-violet-100 text-violet-800 text-sm font-semibold px-4 py-1.5 rounded-full">
-                {data?.length} Total
+        </section>
+
+        <section id="contacts-table" className="w-full">
+          <div className="bg-white/90 dark:bg-slate-900/60 backdrop-blur supports-backdrop-filter:bg-white/70 p-5 sm:p-8 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-black/30 w-full overflow-x-auto ring-1 ring-slate-200/70 dark:ring-white/10">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 px-1">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-slate-50 tracking-tight">
+                Contacts Directory
+              </h2>
+              <span className="w-fit bg-violet-100 text-violet-900 dark:bg-violet-500/15 dark:text-violet-200 text-sm font-semibold px-4 py-1.5 rounded-full ring-1 ring-violet-200/80 dark:ring-violet-300/20">
+                {data?.length ?? 0} Total
               </span>
             </div>
             {loading && <Loader />}
             {errors && <Message msg={`Error ${errors.status}: ${errors.statusText}`} bgColor="#dc3545" />}
-            {data && <Table data={data} setData={setData} setForm={setForm} editFormData={editFormData} setEditFormData={setEditFormData} editData={editData} deleteData={deleteData} />}
+            {data && (
+              <Table
+                data={data}
+                setData={setData}
+                setForm={setForm}
+                editFormData={editFormData}
+                setEditFormData={setEditFormData}
+                editData={editData}
+                deleteData={deleteData}
+              />
+            )}
           </div>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   )
 }
