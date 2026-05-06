@@ -1,9 +1,8 @@
 import { useState } from "react"
-
 import { validateFormField } from "../utils/validateFormField.js"
 
-export function CrudForm ({ data, setData, emptyForm, form, setForm, editData, setEditData }) {
-  const [errors, setErrors] = useState({
+export function Form ({ form, setForm, editFormData, editData, createData, emptyForm }) {
+  const [formErrors, setFormErrors] = useState({
     name: null,
     phone: null,
     email: null,
@@ -12,10 +11,7 @@ export function CrudForm ({ data, setData, emptyForm, form, setForm, editData, s
     terms: false
   })
 
-  const handleChange = (e) => {
-    let name = e.target.name
-    let value = e.target.value
-
+  const change = ({ name, value }) => {
     setForm({
       ...form, 
       [name]: value
@@ -23,62 +19,36 @@ export function CrudForm ({ data, setData, emptyForm, form, setForm, editData, s
 
     let error = validateFormField({ [name]: value })
     if (Object.hasOwn(error, name)) {
-      setErrors({
-        ...errors,
+      setFormErrors({
+        ...formErrors,
         [name]: error[name]
       })
     } else {
-      setErrors({
-        ...errors,
+      setFormErrors({
+        ...formErrors,
         [name]: null
       })
     }
   }
 
-  const handleChecked = (e) =>{
-    let name = e.target.name
-    let value = e.target.checked
+  const handleChange = (e) => change({ name: e.target.name, value: e.target.value })
 
-    setForm({
-      ...form,
-      [name]: value
-    })
-
-    let error = validateFormField({ [name]: value })
-    if (Object.hasOwn(error, name)) {
-      setErrors({
-        ...errors,
-        [name]: error[name]
-      })
-    } else {
-      setErrors({
-        ...errors,
-        [name]: null
-      })
-    }
-  }
+  const handleChecked = (e) => change({ name: e.target.name, value: e.target.checked })
 
   const handleSubmit = (e) => {
     e.preventDefault() 
+    setFormErrors({ ...validateFormField(form) })
+    if (Object.keys(formErrors).find(error => formErrors[error] !== null)) return
 
-    setErrors({ ...validateFormField(form) })
-
-    if (Object.keys(errors).find(error => errors[error] !== null)) return
-
-    if (editData.editing) {
-      setEditData({ editing: false, id: null })
-      setForm(emptyForm)
-
-      setData(data.map(item => {
-        if (item.id === editData.id) item = { ...item, ...form }
-        return item
-      }))
+    // UPDATE
+    if (editFormData.editing) {
+      editData()
       return
     }
 
-    setData([...data, { ...form, id: crypto.randomUUID() }])
-    setForm(emptyForm)
-    setErrors(emptyForm)
+    // CREATE
+    createData()
+    setFormErrors(emptyForm)
   }
 
   return (
@@ -91,7 +61,7 @@ export function CrudForm ({ data, setData, emptyForm, form, setForm, editData, s
             <input 
               className="border-2 border-gray-300 text-gray-600 rounded-lg p-2 px-4 text-sm w-lg outline-none focus:border-blue-300 hover:border-blue-300" 
               type="text" name="name" id="name" placeholder="Type a name" value={form.name || ""} onChange={(e)=> handleChange(e)} />
-              {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+              {formErrors.name && <p className="text-red-500 text-sm">{formErrors.name}</p>}
           </div>
 
           <div className="flex flex-col gap-1">
@@ -99,7 +69,7 @@ export function CrudForm ({ data, setData, emptyForm, form, setForm, editData, s
             <input 
               className="border-2 border-gray-300 text-gray-600 rounded-lg p-2 px-4 text-sm w-lg outline-none focus:border-blue-300 hover:border-blue-300" 
               type="text" name="phone" id="phone" placeholder="Type a phone number" value={form.phone || ""} onChange={(e)=> handleChange(e)} />
-            {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
+            {formErrors.phone && <p className="text-red-500 text-sm">{formErrors.phone}</p>}
           </div>
 
           <div className="flex flex-col gap-1">
@@ -107,7 +77,7 @@ export function CrudForm ({ data, setData, emptyForm, form, setForm, editData, s
             <input 
               className="border-2 border-gray-300 text-gray-600 rounded-lg p-2 px-4 text-sm w-lg outline-none focus:border-blue-300 hover:border-blue-300" 
               type="email" name="email" id="email" placeholder="Type a valid email" value={form.email || ""} onChange={(e)=> handleChange(e)} />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+            {formErrors.email && <p className="text-red-500 text-sm">{formErrors.email}</p>}
           </div>
 
           <div className="flex flex-col gap-1">
@@ -115,7 +85,7 @@ export function CrudForm ({ data, setData, emptyForm, form, setForm, editData, s
             <input 
               className="border-2 border-gray-300 text-gray-600 rounded-lg p-2 px-4 text-sm w-lg outline-none focus:border-blue-300 hover:border-blue-300" 
               type="number" name="age" id="age" placeholder="Type an age" value={form.age || ""} onChange={(e)=> handleChange(e)} />
-            {errors.age && <p className="text-red-500 text-sm">{errors.age}</p>}
+            {formErrors.age && <p className="text-red-500 text-sm">{formErrors.age}</p>}
           </div>
 
           <div className="flex flex-col gap-1">
@@ -136,7 +106,7 @@ export function CrudForm ({ data, setData, emptyForm, form, setForm, editData, s
               <option value="Logística">Logística</option>
               <option value="Producción">Producción</option>
             </select>
-            {errors.department && <p className="text-red-500 text-sm">{errors.department}</p>}
+            {formErrors.department && <p className="text-red-500 text-sm">{formErrors.department}</p>}
           </div>
 
           <div className="flex flex-col gap-1">
@@ -144,10 +114,10 @@ export function CrudForm ({ data, setData, emptyForm, form, setForm, editData, s
               <label htmlFor="terms">Acepto los terminos y condiciones</label>
               <input className="transform scale-140" type="checkbox" id="terms" checked={form.terms || false} name="terms" onChange={(e) => handleChecked(e)} />
             </div>
-            {errors.terms && <p className="text-red-500 text-sm text-center">{errors.terms}</p>}
+            {formErrors.terms && <p className="text-red-500 text-sm text-center">{formErrors.terms}</p>}
           </div>
 
-          {editData.editing ? (
+          {editFormData.editing ? (
             <input 
               type="submit" 
               value="UPDATE CONTACT" 

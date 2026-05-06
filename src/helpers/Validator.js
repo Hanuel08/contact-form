@@ -49,7 +49,7 @@ export class Validator {
   }
 
   static #errorMessage({ field, rule }, messages, defaultMessage) {
-    if(messages.hasOwnProperty(field) && messages[field].hasOwnProperty(rule)) return messages[field][rule]
+    if(Object.hasOwn(messages, field) && Object.hasOwn(messages[field], rule)) return messages[field][rule]
     return defaultMessage
   }
 
@@ -63,11 +63,11 @@ export class Validator {
       let value = data[field]
 
       rulesArray.forEach(rule => {
-        if (errors.hasOwnProperty(field) && errors[field] !== null) return
+        if (Object.hasOwn(errors, field) && errors[field] !== null) return
         let type = rulesArray.find(el => el === "string" || el === "number")
 
         if (rule === "required") {
-          if (!this.#validateRequired(value)) {
+           if (!this.#validateRequired(value)) {
             errors[field] = this.#errorMessage({ field, rule }, messages, `${field} is required`)
             return
           } 
