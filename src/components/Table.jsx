@@ -1,5 +1,5 @@
-import { CrudEditButton } from "./CrudEditBtn";
-import { CrudDeleteButton } from "./CrudDeleteBtn";
+import { EditBtn } from "./EditBtn";
+import { DeleteBtn } from "./DeleteBtn";
 
 export function Table({ data, setForm, setEditFormData, deleteData }){
   return (
@@ -32,8 +32,8 @@ export function Table({ data, setForm, setEditFormData, deleteData }){
                   <td className="text-center p-2" >{el.age}</td>
                   <td className="text-center p-2" >{el.department}</td>
                   <td className="flex gap-4 p-2 items-center justify-center">
-                    <CrudEditButton id={el.id} data={data} setForm={setForm} setEditFormData={setEditFormData} />
-                    <CrudDeleteButton id={el.id} deleteData={deleteData} />
+                    <EditBtn id={el.id} data={data} setForm={setForm} setEditFormData={setEditFormData} />
+                    <DeleteBtn id={el.id} deleteData={deleteData} />
                   </td>
                 </tr>
               ))
