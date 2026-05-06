@@ -1,16 +1,37 @@
-# React + Vite
+# Contacts CRUD — mini proyecto React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ejercicio pequeño en **React** con **Vite** y **Tailwind CSS**: formulario para crear contactos, tabla con edición y borrado, modo claro/oscuro y diseño responsive.
 
-Currently, two official plugins are available:
+![Vista del proyecto](public/img/contact-form-3.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Qué incluye
 
-## React Compiler
+- Formulario de alta (nombre, teléfono, email, edad, departamento, términos).
+- Listado en tabla con acciones de editar y eliminar.
+- Tema **dark** con persistencia en `localStorage`.
+- UI con Tailwind (tarjetas, header fijo, footer con accesos rápidos).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Requisitos
 
-## Expanding the ESLint configuration
+- Node.js (recomendado LTS).
+- API REST en `http://localhost:5000/users` (JSON Server u otro backend compatible) para que el listado y el CRUD funcionen.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Cómo ejecutarlo
+
+```bash
+npm install
+npm run dev
+```
+
+Otros scripts: `npm run build`, `npm run preview`, `npm run lint`.
+
+## Estructura relevante
+
+- `src/App.jsx` — layout, tema y scroll a secciones.
+- `src/components/Main.jsx` — datos HTTP y secciones principal/tabla.
+- `src/components/Form.jsx`, `Table.jsx` — formulario y tabla.
+- `src/helpers/helpHttp.js` — peticiones HTTP.
+
+---
+
+Proyecto de práctica; no está pensado como producción lista para desplegar sin revisar seguridad, validación y configuración del backend.
