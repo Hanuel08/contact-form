@@ -1,0 +1,406 @@
+{
+  "users": [
+    {
+      "id": "USR-9f3a-7821-a1",
+      "name": "Carlos Perez",
+      "phone": "8091110001",
+      "email": "carlos.perez1@gmail.com",
+      "age": "28",
+      "department": "IT"
+    },
+    {
+      "id": "USR-1b7c-9922-b2",
+      "name": "Ana Lopez",
+      "phone": "8091110002",
+      "email": "ana.lopez2@gmail.com",
+      "age": "32",
+      "department": "RRHH"
+    },
+    {
+      "id": "USR-7d2e-1833-c3",
+      "name": "Luis Gomez",
+      "phone": "8091110003",
+      "email": "luis.gomez3@gmail.com",
+      "age": "25",
+      "department": "Ventas"
+    },
+    {
+      "id": "USR-4a8f-2744-d4",
+      "name": "Maria Diaz",
+      "phone": "8091110004",
+      "email": "maria.diaz4@gmail.com",
+      "age": "29",
+      "department": "Marketing"
+    },
+    {
+      "id": "USR-6c1b-3655-e5",
+      "name": "Pedro Santos",
+      "phone": "8091110005",
+      "email": "pedro.santos5@gmail.com",
+      "age": "35",
+      "department": "Finanzas"
+    },
+    {
+      "id": "USR-2f9e-4566-f6",
+      "name": "Laura Ruiz",
+      "phone": "8091110006",
+      "email": "laura.ruiz6@gmail.com",
+      "age": "27",
+      "department": "Sistemas"
+    },
+    {
+      "id": "USR-8e3d-5477-g7",
+      "name": "Jose Ramirez",
+      "phone": "8091110007",
+      "email": "jose.ramirez7@gmail.com",
+      "age": "31",
+      "department": "Logística"
+    },
+    {
+      "id": "USR-5b6a-6388-h8",
+      "name": "Elena Cruz",
+      "phone": "8091110008",
+      "email": "elena.cruz8@gmail.com",
+      "age": "26",
+      "department": "Producción"
+    },
+    {
+      "id": "USR-3c4f-7299-i9",
+      "name": "Miguel Torres",
+      "phone": "8091110009",
+      "email": "miguel.torres9@gmail.com",
+      "age": "40",
+      "department": "Gerencia"
+    },
+    {
+      "id": "USR-0a1d-8101-j1",
+      "name": "Sofia Herrera",
+      "phone": "8091110010",
+      "email": "sofia.herrera10@gmail.com",
+      "age": "24",
+      "department": "IT"
+    },
+    {
+      "id": "USR-9e2b-9112-k2",
+      "name": "Daniel Castro",
+      "phone": "8091110011",
+      "email": "daniel.castro11@gmail.com",
+      "age": "33",
+      "department": "RRHH"
+    },
+    {
+      "id": "USR-7a8c-1023-l3",
+      "name": "Paula Vega",
+      "phone": "8091110012",
+      "email": "paula.vega12@gmail.com",
+      "age": "30",
+      "department": "Ventas"
+    },
+    {
+      "id": "USR-6d3f-1134-m4",
+      "name": "Ricardo Molina",
+      "phone": "8091110013",
+      "email": "ricardo.molina13@gmail.com",
+      "age": "41",
+      "department": "Marketing"
+    },
+    {
+      "id": "USR-5f9a-1245-n5",
+      "name": "Clara Reyes",
+      "phone": "8091110014",
+      "email": "clara.reyes14@gmail.com",
+      "age": "22",
+      "department": "Finanzas"
+    },
+    {
+      "id": "USR-4b2d-1356-o6",
+      "name": "Jorge Castillo",
+      "phone": "8091110015",
+      "email": "jorge.castillo15@gmail.com",
+      "age": "36",
+      "department": "Sistemas"
+    },
+    {
+      "id": "USR-3e7c-1467-p7",
+      "name": "Natalia Flores",
+      "phone": "8091110016",
+      "email": "natalia.flores16@gmail.com",
+      "age": "28",
+      "department": "Logística"
+    },
+    {
+      "id": "USR-2c8b-1578-q8",
+      "name": "Victor Medina",
+      "phone": "8091110017",
+      "email": "victor.medina17@gmail.com",
+      "age": "34",
+      "department": "Producción"
+    },
+    {
+      "id": "USR-1d6a-1689-r9",
+      "name": "Andrea Paredes",
+      "phone": "8091110018",
+      "email": "andrea.paredes18@gmail.com",
+      "age": "27",
+      "department": "Gerencia"
+    },
+    {
+      "id": "USR-8f4e-1790-s0",
+      "name": "Fernando Rojas",
+      "phone": "8091110019",
+      "email": "fernando.rojas19@gmail.com",
+      "age": "45",
+      "department": "IT"
+    },
+    {
+      "id": "USR-7b1c-1801-t1",
+      "name": "Camila Ortega",
+      "phone": "8091110020",
+      "email": "camila.ortega20@gmail.com",
+      "age": "23",
+      "department": "RRHH"
+    },
+    {
+      "id": "USR-6a9d-1912-u2",
+      "name": "Hector Guzman",
+      "phone": "8091110021",
+      "email": "hector.guzman21@gmail.com",
+      "age": "38",
+      "department": "Ventas"
+    },
+    {
+      "id": "USR-5c3f-2023-v3",
+      "name": "Lucia Navarro",
+      "phone": "8091110022",
+      "email": "lucia.navarro22@gmail.com",
+      "age": "26",
+      "department": "Marketing"
+    },
+    {
+      "id": "USR-4d8a-2134-w4",
+      "name": "Oscar Leon",
+      "phone": "8091110023",
+      "email": "oscar.leon23@gmail.com",
+      "age": "39",
+      "department": "Finanzas"
+    },
+    {
+      "id": "USR-3f2b-2245-x5",
+      "name": "Patricia Mora",
+      "phone": "8091110024",
+      "email": "patricia.mora24@gmail.com",
+      "age": "31",
+      "department": "Sistemas"
+    },
+    {
+      "id": "USR-2a7c-2356-y6",
+      "name": "Raul Peña",
+      "phone": "8091110025",
+      "email": "raul.pena25@gmail.com",
+      "age": "29",
+      "department": "Logística"
+    },
+    {
+      "id": "USR-1e5d-2467-z7",
+      "name": "Isabel Rivas",
+      "phone": "8091110026",
+      "email": "isabel.rivas26@gmail.com",
+      "age": "33",
+      "department": "Producción"
+    },
+    {
+      "id": "USR-9c6b-2578-a8",
+      "name": "Diego Soler",
+      "phone": "8091110027",
+      "email": "diego.soler27@gmail.com",
+      "age": "37",
+      "department": "Gerencia"
+    },
+    {
+      "id": "USR-8d1f-2689-b9",
+      "name": "Valeria Campos",
+      "phone": "8091110028",
+      "email": "valeria.campos28@gmail.com",
+      "age": "21",
+      "department": "IT"
+    },
+    {
+      "id": "USR-7e4a-2790-c0",
+      "name": "Mario Varela",
+      "phone": "8091110029",
+      "email": "mario.varela29@gmail.com",
+      "age": "42",
+      "department": "RRHH"
+    },
+    {
+      "id": "USR-6b9c-2801-d1",
+      "name": "Gabriela Soto",
+      "phone": "8091110030",
+      "email": "gabriela.soto30@gmail.com",
+      "age": "28",
+      "department": "Ventas"
+    },
+    {
+      "id": "USR-5d3e-2912-e2",
+      "name": "Enrique Ponce",
+      "phone": "8091110031",
+      "email": "enrique.ponce31@gmail.com",
+      "age": "46",
+      "department": "Marketing"
+    },
+    {
+      "id": "USR-4a6f-3023-f3",
+      "name": "Monica Bravo",
+      "phone": "8091110032",
+      "email": "monica.bravo32@gmail.com",
+      "age": "35",
+      "department": "Finanzas"
+    },
+    {
+      "id": "USR-3b8d-3134-g4",
+      "name": "Alberto Gil",
+      "phone": "8091110033",
+      "email": "alberto.gil33@gmail.com",
+      "age": "27",
+      "department": "Sistemas"
+    },
+    {
+      "id": "USR-2c9a-3245-h5",
+      "name": "Julia Vera",
+      "phone": "8091110034",
+      "email": "julia.vera34@gmail.com",
+      "age": "24",
+      "department": "Logística"
+    },
+    {
+      "id": "USR-1f2b-3356-i6",
+      "name": "Roberto Acosta",
+      "phone": "8091110035",
+      "email": "roberto.acosta35@gmail.com",
+      "age": "44",
+      "department": "Producción"
+    },
+    {
+      "id": "USR-9a7e-3467-j7",
+      "name": "Diana Fuentes",
+      "phone": "8091110036",
+      "email": "diana.fuentes36@gmail.com",
+      "age": "30",
+      "department": "Gerencia"
+    },
+    {
+      "id": "USR-8c4d-3578-k8",
+      "name": "Ivan Duarte",
+      "phone": "8091110037",
+      "email": "ivan.duarte37@gmail.com",
+      "age": "36",
+      "department": "IT"
+    },
+    {
+      "id": "USR-7d1b-3689-l9",
+      "name": "Teresa Pino",
+      "phone": "8091110038",
+      "email": "teresa.pino38@gmail.com",
+      "age": "29",
+      "department": "RRHH"
+    },
+    {
+      "id": "USR-6e5c-3790-m0",
+      "name": "Samuel Rios",
+      "phone": "8091110039",
+      "email": "samuel.rios39@gmail.com",
+      "age": "41",
+      "department": "Ventas"
+    },
+    {
+      "id": "USR-5a3f-3801-n1",
+      "name": "Carmen Ibarra",
+      "phone": "8091110040",
+      "email": "carmen.ibarra40@gmail.com",
+      "age": "33",
+      "department": "Marketing"
+    },
+    {
+      "id": "USR-4f8b-3912-o2",
+      "name": "Pablo Nieto",
+      "phone": "8091110041",
+      "email": "pablo.nieto41@gmail.com",
+      "age": "38",
+      "department": "Finanzas"
+    },
+    {
+      "id": "USR-3a6d-4023-p3",
+      "name": "Silvia Conde",
+      "phone": "8091110042",
+      "email": "silvia.conde42@gmail.com",
+      "age": "26",
+      "department": "Sistemas"
+    },
+    {
+      "id": "USR-2b9c-4134-q4",
+      "name": "Hugo Salas",
+      "phone": "8091110043",
+      "email": "hugo.salas43@gmail.com",
+      "age": "34",
+      "department": "Logística"
+    },
+    {
+      "id": "USR-1c7e-4245-r5",
+      "name": "Rosa Vinas",
+      "phone": "8091110044",
+      "email": "rosa.vinas44@gmail.com",
+      "age": "28",
+      "department": "Producción"
+    },
+    {
+      "id": "USR-9d5a-4356-s6",
+      "name": "Adrian Mejia",
+      "phone": "8091110045",
+      "email": "adrian.mejia45@gmail.com",
+      "age": "40",
+      "department": "Gerencia"
+    },
+    {
+      "id": "USR-8e2b-4467-t7",
+      "name": "Beatriz Luna",
+      "phone": "8091110046",
+      "email": "beatriz.luna46@gmail.com",
+      "age": "31",
+      "department": "IT"
+    },
+    {
+      "id": "USR-7c8f-4578-u8",
+      "name": "Kevin Rocha",
+      "phone": "8091110047",
+      "email": "kevin.rocha47@gmail.com",
+      "age": "23",
+      "department": "RRHH"
+    },
+    {
+      "id": "USR-6a4d-4689-v9",
+      "name": "Lorena Mena",
+      "phone": "8091110048",
+      "email": "lorena.mena48@gmail.com",
+      "age": "27",
+      "department": "Ventas"
+    },
+    {
+      "id": "USR-5b1e-4790-w0",
+      "name": "Esteban Lara",
+      "phone": "8091110049",
+      "email": "esteban.lara49@gmail.com",
+      "age": "37",
+      "department": "Marketing"
+    },
+    {
+      "id": "USR-4c9a-4801-x1",
+      "name": "Gloria Paz Diaz",
+      "phone": "8091110050",
+      "email": "gloria.paz50@gmail.com",
+      "age": "35",
+      "department": "RRHH",
+      "terms": true
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
