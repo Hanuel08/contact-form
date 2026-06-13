@@ -18,10 +18,17 @@ Ejercicio pequeño en **React** con **Vite** y **Tailwind CSS**: formulario para
 
 ## Cómo ejecutarlo
 
+El backend corre con **JSON Server** en `http://localhost:5000/users`. Primero levantamos la API y luego el frontend:
+
 ```bash
-npm install
+# Terminal 1 — API REST
+npm run server
+
+# Terminal 2 — Frontend
 npm run dev
 ```
+
+El proyecto ya incluye datos de ejemplo en `src/api/db.json`.
 
 Otros scripts: `npm run build`, `npm run preview`, `npm run lint`.
 
