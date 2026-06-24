@@ -15,7 +15,7 @@ const emptyForm = {
   terms: false
 }
 
-const URL = "http://localhost:5000/users"
+const URL = import.meta.env.VITE_API_URL || "/users"
 
 export function Main() {
   const [data, setData] = useState(null)

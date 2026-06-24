@@ -1,0 +1,7 @@
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY src/api/db.json ./src/api/db.json
+EXPOSE 5000
+CMD ["npx", "json-server", "src/api/db.json", "--port", "5000", "--host", "0.0.0.0"]
