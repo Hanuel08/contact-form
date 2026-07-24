@@ -15,7 +15,7 @@ const emptyForm = {
   terms: false
 }
 
-const URL = import.meta.env.VITE_API_URL || "/users"
+const URL = import.meta.env.VITE_API_URL || "/api/users"
 
 export function Main() {
   const [data, setData] = useState(null)
