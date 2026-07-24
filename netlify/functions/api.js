@@ -2,10 +2,10 @@ import { readFileSync } from "fs"
 import { join, dirname } from "path"
 import { fileURLToPath } from "url"
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const fileUrl = fileURLToPath(import.meta.url)
+const fileDir = dirname(fileUrl)
 
-const DB_PATH = join(__dirname, "db.json")
+const DB_PATH = join(fileDir, "db.json")
 
 let data = null
 
